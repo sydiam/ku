@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--mint-ui css文件-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/vue.js"></script>
+  <!--mint-ui js文件-->
+  <script src="js/index.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+   <div id="app">
+    <!--固定在顶部的导航栏-->   
+    <mt-header fixed title="学子商城"></mt-header>
+    <br />
+    <br />
+    <br />
+    <!--标题过长会隐藏后面的内容-->
+    <mt-header title="标题过长长长长长长长长哈哈哈只哈哈哈哈哈哈哈哈"></mt-header>
+    <br /><br /><br />
+    <mt-header title="学子商城">
+        <mt-button icon="back" slot="left">返回</mt-button>
+        <mt-button icon="more" slot="right"></mt-button>
+    </mt-header>
+   </div>
+   <script>
+        new Vue({
+          el:"#app",
+          data:function(){
+            return {msg:"ok"}
+          },
+          methods:{
+             show(){
+               console.log("show()");
+             }
+          }
+        })
+   </script>
+</body>
+</html>

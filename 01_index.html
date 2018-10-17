@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/vue.js"></script>
+  <script src="js/index.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+   <div id="app">
+       <h3 id="h3">{{msg}}</h3>
+       <button>点击显示提示消息</button>
+   </div>
+   <script>
+        //#创建期间生命周期函数
+        //#beforeCreate:实例刚创建好，还没有初始化好
+        //data methods
+        //#created:
+        new Vue({
+          el:"#app",
+          data:function(){
+            return {msg:"ok"}
+          },
+          //勾子函数，当vue对象创成功后调用方法
+          created:function(){
+            
+          },
+          methods:{
+             show(){
+               console.log("show()");
+             }
+          },
+          beforeCreate() {
+            //1:生命周期第一个函数,没有初始化data,methods
+            //console.log("1:beforeCreate");
+            //console.log(this.msg);//undefined
+          },
+          created(){
+            //2:生命周期第二个函数
+            console.log("2:created");
+            console.log(this.msg);
+          },
+          beforeMount() {
+            //3:生命周期第三个函数,数据创成功,
+            //没有渲染页面
+            //console.log("3:beforeMount");
+            //var str = document.getElementById("h3");
+            //console.log(str.innerText); //{{msg}}
+          },
+          mounted() {
+            //4:生命周期第三个函数,数据创成功,
+            //渲染页面
+            console.log("4:mounted");
+            var str = document.getElementById("h3");
+            console.log(str.innerText);
+          },
+        })
+   </script>
+</body>
+</html>
